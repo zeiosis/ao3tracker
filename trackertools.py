@@ -44,7 +44,7 @@ class TagMetadata:
         
         
 
-def update_table(verbose=False):
+def update_table(filename, verbose=False):
     quants = []
 
     for x in urls:
@@ -69,12 +69,10 @@ def update_table(verbose=False):
     for x in savepoint[1]:
         addlist.append(x.quantity)
     
-    print(addlist)
-    
     ship_quants.loc[len(ship_quants.index)] = addlist
     
-    sh_qu_MASTER = pandas.read_csv("SH_QU_0.csv")
+    sh_qu_MASTER = pandas.read_csv(filename)
     sh_qu_MASTER = sh_qu_MASTER.append(ship_quants)
-    print(sh_qu_MASTER)
-    sh_qu_MASTER.to_csv("SH_QU_0.csv", index=False)
     
+    return sh_qu_MASTER
+    #sh_qu_MASTER.to_csv(filename, index=False)
