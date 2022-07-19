@@ -24,8 +24,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2.4.2
       
-    - name: Install dependencies
-      run: pip install bs4 requests pandas
-      
     - name: Update table
-      run: python3.9 .github/workflows/table_update.py
+      run: |
+        pip3 install bs4 requests pandas
+        python3.9 .github/workflows/table_update.py
