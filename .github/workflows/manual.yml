@@ -1,7 +1,28 @@
 # This is a basic workflow that is manually triggered
 
 
+name: Resources
+on: repository_dispatch
+jobs:
+    resources:
+        name: Update resources
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v1
 
+            - uses: actions/setup-node@v1
+
+            - name: Fetch resources
+              run: ./scripts/fetch-resources.sh
+
+            - name: Update resources
+              uses: test-room-7/action-update-file@v1
+              with:
+                  file-path: path/to/file
+                  commit-msg: Update resources
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
+                  
+                  
 name: Manual workflow
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
@@ -28,3 +49,8 @@ jobs:
       run: |
         pip3 install bs4 requests pandas
         python3.9 .github/workflows/table_update.py
+        
+    - name: Update csv file
+      run: |
+        ls
+    
