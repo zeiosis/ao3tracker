@@ -76,3 +76,9 @@ def update_table(filename, verbose=False):
     
     return sh_qu_MASTER
     #sh_qu_MASTER.to_csv(filename, index=False)
+
+
+
+
+x = update_table("SH_QU_0.csv")
+x.to_csv("SH_QU_0.csv", index=False)
