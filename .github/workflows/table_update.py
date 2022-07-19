@@ -68,6 +68,9 @@ def update_table(filename, verbose=False):
     addlist = [savepoint[0]]
     for x in savepoint[1]:
         addlist.append(x.quantity)
+        
+    print(addlist)
+    print(ship_quants)
     
     ship_quants.loc[len(ship_quants.index)] = addlist
     
