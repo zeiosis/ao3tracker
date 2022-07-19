@@ -32,6 +32,6 @@ jobs:
         ls
         cat SH_QU_0.csv
         git status
-        git commit SH_QU_0.csv
+        git commit SH_QU_0.csv -m testing
         git status
     
