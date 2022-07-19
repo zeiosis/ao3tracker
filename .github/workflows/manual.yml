@@ -31,4 +31,7 @@ jobs:
       run: |
         ls
         cat SH_QU_0.csv
+        git status
+        git commit yourfile.js
+        git status
     
