@@ -24,8 +24,10 @@ jobs:
       
     - name: Update table
       run: |
+        cd .github
+        cd workflows
         pip3 install bs4 requests pandas
-        python3.9 .github/workflows/table_update.py
+        python3.9 table_update.py
         
     - name: Update csv file
       run: |
