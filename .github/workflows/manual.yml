@@ -30,4 +30,5 @@ jobs:
     - name: Update csv file
       run: |
         ls
+        cat SH_QU_0.csv
     
