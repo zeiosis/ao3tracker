@@ -24,16 +24,12 @@ jobs:
       
     - name: Update table
       run: |
-        cd .github
-        cd workflows
         pip3 install bs4 requests pandas
         python3.9 table_update.py
         
     - name: Update csv file
       run: |
         ls
-        cd .github
-        cd workflows
         cat SH_QU_0.csv
         git status
         git commit SH_QU_0.csv -m testing
