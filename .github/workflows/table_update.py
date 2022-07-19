@@ -96,8 +96,8 @@ def update_table(filename, verbose=False):
     #sh_qu_MASTER.to_csv(filename, index=False)
 
 def main():
-    x = update_table("SH_QU_0.csv", verbose=True)
-    x.to_csv("SH_QU_0.csv", index=False)
+    x = update_table(".github/workflows/SH_QU_0.csv", verbose=True)
+    x.to_csv(".github/workflows/SH_QU_0.csv", index=False)
         
 if __name__ == '__main__':
   main()
