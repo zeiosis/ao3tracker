@@ -47,6 +47,8 @@ class TagMetadata:
 def update_table(filename, verbose=False):
     quants = []
 
+    print("50, quants: ", quants)
+
     for x in urls:
         k = TagMetadata(x, urls[x])
         if verbose == True:
@@ -57,20 +59,33 @@ def update_table(filename, verbose=False):
     
     dt = datetime.now()
     savepoint = [dt, quants]
+
+    print("63, dt: ", dt)
+    print("64, savepoint: ", savepoint)
     
     collist = ['Timestamp']
 
+    print("68, collist: ", collist)
+
     for x in urls:
         collist.append(x)
-    
+        
+    print("73, collist: ", collist)
+
     ship_quants = pandas.DataFrame(columns=collist)
-    
+        
+    print("77, ship_quants: ", ship_quants)
+
+
     addlist = [savepoint[0]]
+        
+    print("82, addlist: ", addlist)
+
     for x in savepoint[1]:
         addlist.append(x.quantity)
         
-    print(addlist)
-    print(ship_quants)
+    print("87, addlist: ", addlist)
+    print("88, ship_quants: ", ship_quants)
     
     ship_quants.loc[len(ship_quants.index)] = addlist
     
