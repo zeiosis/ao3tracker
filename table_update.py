@@ -50,6 +50,7 @@ def update_table(filename, verbose=False):
     print("50, urls: ", urls)
 
     for x in urls:
+        time.sleep(5)
         k = TagMetadata(x, urls[x])
         if verbose == True:
             print(k.name)
