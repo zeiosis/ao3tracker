@@ -47,7 +47,7 @@ class TagMetadata:
 def update_table(filename, verbose=False):
     quants = []
 
-    print("50, quants: ", quants)
+    print("50, urls: ", urls)
 
     for x in urls:
         k = TagMetadata(x, urls[x])
@@ -96,7 +96,7 @@ def update_table(filename, verbose=False):
     #sh_qu_MASTER.to_csv(filename, index=False)
 
 def main():
-    x = update_table("SH_QU_0.csv")
+    x = update_table("SH_QU_0.csv", verbose=True)
     x.to_csv("SH_QU_0.csv", index=False)
         
 if __name__ == '__main__':
